@@ -17,7 +17,7 @@ def check_count(i,j,matrix,direction,sizeI,sizeJ):
             return 1
     return 0
 
-def count_santa(matrix):
+def count_MAS_diag(matrix):
     
     final_count = 0 
     sizeI = len(matrix)
@@ -42,5 +42,5 @@ if __name__ == "__main__":
         grid = [list(line.strip()) for line in f]
 
     # print(count)
-    result = count_santa(grid)
+    result = count_MAS_diag(grid)
     print(f"Total is: {result}")
