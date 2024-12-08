@@ -1,9 +1,14 @@
+### part 1 of the day 6 of adventofcode
+### https://adventofcode.com/2024/day/6
+
+# find where you are at first in the labyrinth
 def getInitialPosition(input,possible_rotations,sizeI,sizeJ):
     for i in range(sizeI):
         for j in range(sizeJ):
             if input[i][j] in possible_rotations:
                 return [i,j,input[i][j]]
     
+# rotate to the right your orientation
 def rotate(current_position,possible_rotations):
     for i in range (len(possible_rotations)):
         if possible_rotations[i] == current_position[2]:
@@ -61,6 +66,7 @@ def walk_until_obstacle(input,current_position,possible_rotations,sizeI,sizeJ,vi
         case _ :
             print("Error in walk_until_obstacle !")
 
+# walk until you leave the labyrinth ie while you're in the grid
 def walk_until_leave(input,current_position,possible_rotations,sizeI,sizeJ):
     visited = []
     walk,has_left,visited= walk_until_obstacle(input,current_position,possible_rotations,sizeI,sizeJ,visited)
@@ -70,7 +76,7 @@ def walk_until_leave(input,current_position,possible_rotations,sizeI,sizeJ):
 
 if __name__ == "__main__":
     with open("input", "r") as f:
-        input =[list(line.strip()) for line in f]
+        input = f.readlines()
     sizeI = len(input)-1
     sizeJ = len(input[0])-1
     possible_rotations=["^",">","v","<"]
