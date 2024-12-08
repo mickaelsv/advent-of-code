@@ -1,7 +1,13 @@
+### part 2 of the day 3 of adventofcode
+### https://adventofcode.com/2024/day/3
+
 import re 
+
+# sum up every "mul(X,Y)" = X \times Y for every mul(X,Y) in the file 
+# Only if they are in a "do()", else if they are in a "dont()", don't add them.
+# for example do()mul(1,3)don't()mul(3,8) should return 1*3 = 3.
 def calculate_total(input):
     processed_line = re.findall(r"mul\([0-9]+,[0-9]+\)|do\(\)|don't\(\)",input)
-    # result = sum([(int(processed_line[i][0])*int(processed_line[i][1])) for i in range(len(processed_line))])
     do = True
     result = 0
     for sentence in processed_line:
