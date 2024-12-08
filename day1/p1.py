@@ -1,3 +1,6 @@
+### part 1 of the day 1 of adventofcode
+### https://adventofcode.com/2024/day/1
+
 def main():
     first_list = []
     second_list = []
@@ -12,6 +15,10 @@ def main():
     first_list.sort()
     second_list.sort()
 
+    # calculate the sum of the distances between the two sorted lists.
+    # for example
+    # 4 3
+    # should return 1
     sum_distance = 0
 
     for i in range(len(first_list)):
