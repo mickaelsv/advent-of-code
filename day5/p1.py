@@ -1,6 +1,10 @@
-import re
-def split_page_ordering_rules_updates(input):
+### part 1 of the day 5 of adventofcode
+### https://adventofcode.com/2024/day/5
 
+import re
+
+# split the input to find the target values and the ordering rules.
+def split_page_ordering_rules_updates(input):
     # ordering_rules part
     # we get every couple of numbers having pattern "XX|YY"
     ordering_rules_list = [item.split("|") for item in re.findall(r"\d+\|\d+",input)]
@@ -16,6 +20,7 @@ def split_page_ordering_rules_updates(input):
     updates = [item.split(",") for item in re.findall(r"^\d+(?:,\d+)*$",input, flags=re.MULTILINE)]
     return ordering_rules,updates
 
+# check if the updates are correct, and returns the correct ones
 def get_corrects_updates(ordering_rules, updates):
     correct_updates = []
     for update in updates:
@@ -33,8 +38,8 @@ def get_corrects_updates(ordering_rules, updates):
             correct_updates.append(update)
     return correct_updates
 
+# sum of mids of a list of lists
 def calculate_sum_mid_values(updates):
-    # sum of mids of a list of lists
     return sum([int(update[int (len(update)/2)]) for update in updates])
 
 
