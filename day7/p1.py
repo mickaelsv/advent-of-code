@@ -1,3 +1,6 @@
+### part 1 of the day 7 of adventofcode
+### https://adventofcode.com/2024/day/7
+
 import itertools
 
 # Get every possible expressions for every operators

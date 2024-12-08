@@ -1,3 +1,6 @@
+### part 2 of the day 7 of adventofcode
+### https://adventofcode.com/2024/day/7
+
 import itertools
 from tqdm import tqdm
 # Get every possible expressions for every operators
