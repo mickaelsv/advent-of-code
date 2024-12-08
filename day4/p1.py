@@ -1,3 +1,7 @@
+### part 1 of the day 4 of adventofcode
+### https://adventofcode.com/2024/day/4
+
+# get the word given the position and the direction
 def getword(i,j,matrix,direction,sizeI,sizeJ):
     north = [j,j-1,j-2,j-3]
     east = [i,i+1,i+2,i+3]
@@ -35,6 +39,7 @@ def getword(i,j,matrix,direction,sizeI,sizeJ):
     if correct:
         return "".join([matrix[index_list_i[index]][index_list_j[index]] for index in range(4)])
 
+# count if a word in a specific direction is an XMAS or not
 def check_count(i,j,matrix,direction,sizeI,sizeJ):
     if (matrix[i][j] == "X"):
         word = getword(i,j,matrix,direction,sizeI,sizeJ)
@@ -43,6 +48,7 @@ def check_count(i,j,matrix,direction,sizeI,sizeJ):
             return 1
     return 0
 
+# count every XMAS for every directions
 def count_XMAS(matrix):
     sizeI = len(matrix)
     sizeJ= len(matrix[0])

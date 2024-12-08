@@ -1,6 +1,11 @@
+### part 2 of the day 4 of adventofcode
+### https://adventofcode.com/2024/day/4
+
+# check if a coordinate is in the grid or not
 def check_if_in_grid(i,j,direction,sizeI,sizeJ):
     return ((1<= j < sizeJ-1) and (1<= i < sizeI-1))
 
+# get the word given the position and the direction
 def getword(i,j,matrix,direction):
     index_list_i = [i-1,i,i+1]
     if direction=="diag1":
@@ -9,6 +14,7 @@ def getword(i,j,matrix,direction):
         index_list_j = [j-1,j,j+1]
     return "".join([matrix[index_list_i[index]][index_list_j[index]] for index in range(3)])
 
+# check if there is a diag writing MAS for a specific direction
 def check_count(i,j,matrix,direction,sizeI,sizeJ):
     global count
     if (matrix[i][j] == "A" and check_if_in_grid(i,j,direction,sizeI,sizeJ)):
@@ -17,6 +23,10 @@ def check_count(i,j,matrix,direction,sizeI,sizeJ):
             return 1
     return 0
 
+# count if you have an "X" writting MAS, for example:
+# M . M
+# . A .
+# S . S
 def count_MAS_diag(matrix):
     
     final_count = 0 
